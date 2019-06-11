@@ -1,13 +1,13 @@
 module.exports = {
     service: 'gmail',
     auth: {
-        user: 'myfiddlerstory@gmail.com',
-        pass: '81MRTK@!',
+        user: '',
+        pass: '',
         port: 587,
         authentication: 'plain'
     },
     mailOptions: {
-        from: 'myfiddlerstory@gmail.com',
+        from: '',
         subject: 'Thankyou for being with #MYFIDDLESTORY',
         text: 'Thankyou for being with #MYFIDDLESTORY'
     }
