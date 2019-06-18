@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const PORT = process.env.PORT || 8083
 const UserRoute = require('./Routes/UserRoute');
+let fileUpload = require('express-fileupload')
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -14,6 +15,7 @@ app.use(function (req, res, next) {
 	next();
 })
 app.use(cookieParser());
+app.use(fileUpload())
 app.get('/myfiddlerstory', function (req, res, next) {
 	res.send(`API is working`)
 })
