@@ -50,8 +50,6 @@ upload.prototype.uploadFile = function (files, res) {
     * send the email
     */
 
-
-
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             //console.log(`Email not sent: ${error}`)
