@@ -4,7 +4,7 @@ let survey_information = require('../Modal/Survey_Information');
 let Survey_Information_fetch = require('../Modal/Survey_Information_fetch');
 let mailer = require('../Modal/mailer')
 let upload = require('../Modal/upload')
-
+let uploads = require('../Modal/upload_s3_bucket')
 
 UserRouter
     .route('/fetch_survey_information')
@@ -62,8 +62,6 @@ UserRouter
 
     });
 
-
-
 /**
  * usage:
  * {
@@ -82,6 +80,12 @@ UserRouter.route('/sendEmail').post(function (req, res) {
 
 // REMOVE THE CODE BELOW FROM HERE IF NOT WORKED
 UserRouter.route('/upload').post(function (req, res) {
+    /**
+     * This code is for the Email with an attachment
+     * but unfortunately it does not runs on HEROKU
+     * please do not use this
+     */
+
     let object = new upload();
     let filePath = req.files.File.name;
     req.files.File.mv(filePath, function (err) {
@@ -95,5 +99,14 @@ UserRouter.route('/upload').post(function (req, res) {
     object.uploadFile(filePath, res);
     // console.log(req.files.File.data);
 });
+
+
+UserRouter.route('/uploadS3').post(function (req, res) {
+    let object = new uploads();
+    console.log(req.files.image)
+    object.upload(req.files.image, res)
+
+});
+
 
 module.exports = UserRouter;
