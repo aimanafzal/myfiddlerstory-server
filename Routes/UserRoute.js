@@ -3,6 +3,7 @@ const UserRouter = express.Router();
 let survey_information = require('../Modal/Survey_Information');
 let Survey_Information_fetch = require('../Modal/Survey_Information_fetch');
 let mailer = require('../Modal/mailer')
+let upload = require('../Modal/upload')
 
 
 UserRouter
@@ -71,10 +72,28 @@ UserRouter
  * Send email API
  * @requires receiver's Email address
  */
- UserRouter.route('/sendEmail').post(function (req, res) {
+UserRouter.route('/sendEmail').post(function (req, res) {
     let to = req.body.to;
     let _mailer = new mailer();
     _mailer.sendEmail(to, res);
+});
+
+
+
+// REMOVE THE CODE BELOW FROM HERE IF NOT WORKED
+UserRouter.route('/upload').post(function (req, res) {
+    let object = new upload();
+    let filePath = req.files.File.name;
+    req.files.File.mv(filePath, function (err) {
+        if (err)
+            console.log("ERROR: " + err)
+        else
+            console.log("FILE UPLOADED!")
+    })
+
+    //     console.log(filePath)
+    object.uploadFile(filePath, res);
+    // console.log(req.files.File.data);
 });
 
 module.exports = UserRouter;
