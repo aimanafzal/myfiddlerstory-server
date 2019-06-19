@@ -56,7 +56,8 @@ UserRouter
         let question20_blank1 = req.body.question20_blank1;
         let question21_blank1 = req.body.question21_blank1;
         let question22_blank1 = req.body.question22_blank1;
-        let question23_blank1 = req.body.question23_blank1
+        let question23_blank1 = req.body.question23_blank1;
+        let link = req.body.link;
 
         let obj = new survey_information(FullName, EmailAddress, Anonymous,
             question1_blank1, question2_blank1,
@@ -71,7 +72,7 @@ UserRouter
             question10_blank1,
             question11_blank1, question12_blank1, question13_blank1, question14_blank1, question15_blank1,
             question16_blank1, question17_blank1, question18_blank1, question19_blank1, question20_blank1,
-            question21_blank1, question22_blank1, question23_blank1);
+            question21_blank1, question22_blank1, question23_blank1,link);
         obj.addRecord(res);
 
     });
@@ -109,6 +110,7 @@ UserRouter.route('/add_second_generation_survey_information').post(function (req
     let question15_blank1 = req.body.question15_blank1;
     let question16_blank1 = req.body.question16_blank1;
     let question17_blank1 = req.body.question17_blank1;
+    let link = req.body.link;
 
 
     let obj = new SecondGeneration_Survey_Information(FullName,
@@ -130,7 +132,7 @@ UserRouter.route('/add_second_generation_survey_information').post(function (req
         question14_blank1,
         question15_blank1,
         question16_blank1,
-        question17_blank1);
+        question17_blank1,link);
     obj.addRecord(res);
 
 });
