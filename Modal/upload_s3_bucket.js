@@ -11,8 +11,8 @@ let multerS3 = require('multer-s3');
 function upload_s3_bucket() { }
 upload_s3_bucket.prototype.upload = function (file, res) {
     let s3bucket = new aws.S3({
-        secretAccessKey: '7BIL9JDzIjuJ3kfalaMm8kXxnoq+08eqPGNoMuej',
-        accessKeyId: 'AKIA4Q5EFT7XWPY2RPEC',
+        secretAccessKey: '',
+        accessKeyId: '',
         region: 'us-east-2'
     })
     var params = {
