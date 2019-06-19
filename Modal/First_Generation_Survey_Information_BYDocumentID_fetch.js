@@ -53,7 +53,8 @@ First_Generation_Survey_Information_BYDocumentID_fetch.prototype.fetch_record = 
             question20_blank1: querysnapshot.data().question20_blank1,
             question21_blank1: querysnapshot.data().question21_blank1,
             question22_blank1: querysnapshot.data().question22_blank1,
-            question23_blank1: querysnapshot.data().question23_blank1
+            question23_blank1: querysnapshot.data().question23_blank1,
+            link:  querysnapshot.data().link
         }
         res.send(this.data)
 

@@ -36,7 +36,8 @@ function Second_Generation_Survey_Information(
     question14_blank1,
     question15_blank1,
     question16_blank1,
-    question17_blank1
+    question17_blank1,
+    link
 ) {
     this.data = {
         FullName: (FullName !== "") ? FullName : null,
@@ -65,7 +66,8 @@ function Second_Generation_Survey_Information(
         question14_blank1: question14_blank1,
         question15_blank1: question15_blank1,
         question16_blank1: question16_blank1,
-        question17_blank1: question17_blank1
+        question17_blank1: question17_blank1,
+        link: link
     }
 }
 

@@ -54,7 +54,8 @@ Survey_Information_fetch.prototype.fetch_record = function (res) {
                 question20_blank1: element.data().question20_blank1,
                 question21_blank1: element.data().question21_blank1,
                 question22_blank1: element.data().question22_blank1,
-                question23_blank1: element.data().question23_blank1
+                question23_blank1: element.data().question23_blank1,
+                link: element.data().link
             }
             res.send(this.data)
         })
