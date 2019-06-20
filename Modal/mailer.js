@@ -32,12 +32,12 @@ mailer.prototype.sendEmail = function (to, res) {
     */
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            // res.send({ Message: info.response, error: error })
-            console.log(`Email not sent: ${error}`)
+             res.send({ Message: info.response, error: error })
+            //console.log(`Email not sent: ${error}`)
         }
         else {
-            console.log(`Email sent: ${info}`)
-            // res.send({ Message: info.response, error: null })
+            // console.log(`Email sent: ${info}`)
+            res.send({ Message: info.response, error: null })
         }
     })
 
