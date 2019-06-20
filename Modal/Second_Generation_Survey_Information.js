@@ -22,10 +22,10 @@ function Second_Generation_Survey_Information(
     Anonymous,
     question1_blank1,
     question2_blank1,
-    question3_blank1,
-    question4_blank1, question4_blank2, question4_blank3, question4_blank4, question4_blank5,
-    question5_blank1,
-    question6_blank1, question6_blank2, question6_blank3, question6_blank4,
+    question3_blank1, question3_blank2, question3_blank3, question3_blank4,
+    question4_blank1,
+    question5_blank1, question5_blank2, question5_blank3,
+    question6_blank1,
     question7_blank1,
     question8_blank1,
     question9_blank1,
@@ -36,26 +36,24 @@ function Second_Generation_Survey_Information(
     question14_blank1,
     question15_blank1,
     question16_blank1,
-    question17_blank1,
     link
 ) {
     this.data = {
         FullName: (FullName !== "") ? FullName : null,
         EmailAddress: (EmailAddress !== "") ? EmailAddress : null,
         Anonymous: Anonymous,
+
         question1_blank1: question1_blank1,
         question2_blank1: question2_blank1,
         question3_blank1: question3_blank1,
+        question3_blank2: question3_blank2,
+        question3_blank3: question3_blank3,
+        question3_blank4: question3_blank4,
         question4_blank1: question4_blank1,
-        question4_blank2: question4_blank2,
-        question4_blank3: question4_blank3,
-        question4_blank4: question4_blank4,
-        question4_blank5: question4_blank5,
         question5_blank1: question5_blank1,
+        question5_blank2: question5_blank2,
+        question5_blank3: question5_blank3,
         question6_blank1: question6_blank1,
-        question6_blank2: question6_blank2,
-        question6_blank3: question6_blank3,
-        question6_blank4: question6_blank4,
         question7_blank1: question7_blank1,
         question8_blank1: question8_blank1,
         question9_blank1: question9_blank1,
@@ -66,7 +64,7 @@ function Second_Generation_Survey_Information(
         question14_blank1: question14_blank1,
         question15_blank1: question15_blank1,
         question16_blank1: question16_blank1,
-        question17_blank1: question17_blank1,
+
         link: link
     }
 }
