@@ -18,8 +18,12 @@ mailer.prototype.sendEmail = function (to, res) {
             authentication: mailerSettings.auth.authentication
         }
     });
+    let link = 'drive.google.com/drive/folders/1cIiJWGhogvtH9wI15VpO9WC7jO86tB5A?usp=sharing'
+    let html =`Thank you for participating in #MYFIDDLERSTORY.  If you have recorded a video it was automatically downloaded to your phone.  Please upload the video to the MyFiddlerStory Public Video folder <br> <a href='${link}'>link</a>`
+    //let html =  `click on the given link to reset your password <a href='${link}'>link</a>.<br> Please do not reply to this email.<b>This is a computer generated email</b>`
 
-    let html = `Thankyou for your time on #MYFIDDLESTORY`
+
+    //let html = `Thankyou for your time on #MYFIDDLESTORY`
     var mailOptions = {
         from: mailerSettings.mailOptions.from,
         to: to,
