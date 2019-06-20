@@ -34,9 +34,11 @@ UserRouter
         let Anonymous = req.body.Anonymous;
         let question1_blank1 = req.body.question1_blank1;
         let question2_blank1 = req.body.question2_blank1;
+        let question2_blank2 = req.body.question2_blank2;
+        let question2_blank3 = req.body.question2_blank3;
+
         let question3_blank1 = req.body.question3_blank1;
-        let question3_blank2 = req.body.question3_blank2;
-        let question3_blank3 = req.body.question3_blank3;
+
         let question4_blank1 = req.body.question4_blank1;
         let question5_blank1 = req.body.question5_blank1;
         let question6_blank1 = req.body.question6_blank1;
@@ -46,7 +48,10 @@ UserRouter
         let question10_blank1 = req.body.question10_blank1;
         let question11_blank1 = req.body.question11_blank1;
         let question12_blank1 = req.body.question12_blank1;
+
         let question13_blank1 = req.body.question13_blank1;
+        let question13_blank2 = req.body.question13_blank2;
+
         let question14_blank1 = req.body.question14_blank1;
         let question15_blank1 = req.body.question15_blank1;
         let question16_blank1 = req.body.question16_blank1;
@@ -57,12 +62,17 @@ UserRouter
         let question21_blank1 = req.body.question21_blank1;
         let question22_blank1 = req.body.question22_blank1;
         let question23_blank1 = req.body.question23_blank1;
+
+
         let link = req.body.link;
 
         let obj = new survey_information(FullName, EmailAddress, Anonymous,
-            question1_blank1, question2_blank1,
-            question3_blank1, question3_blank2,
-            question3_blank3,
+
+            question1_blank1,
+            question2_blank1,
+            question2_blank2,
+            question2_blank3,
+            question3_blank1,
             question4_blank1,
             question5_blank1,
             question6_blank1,
@@ -70,9 +80,20 @@ UserRouter
             question8_blank1,
             question9_blank1,
             question10_blank1,
-            question11_blank1, question12_blank1, question13_blank1, question14_blank1, question15_blank1,
-            question16_blank1, question17_blank1, question18_blank1, question19_blank1, question20_blank1,
-            question21_blank1, question22_blank1, question23_blank1,link);
+            question11_blank1,
+            question12_blank1,
+            question13_blank1,
+            question13_blank2,
+            question14_blank1,
+            question15_blank1,
+            question16_blank1,
+            question17_blank1,
+            question18_blank1,
+            question19_blank1,
+            question20_blank1,
+            question21_blank1,
+            question22_blank1,
+            question23_blank1, link);
         obj.addRecord(res);
 
     });
@@ -83,22 +104,21 @@ UserRouter.route('/add_second_generation_survey_information').post(function (req
     let EmailAddress = (req.body.EmailAddress !== '') ? req.body.EmailAddress : null;
     let Anonymous = req.body.Anonymous;
     let question1_blank1 = req.body.question1_blank1;
+
     let question2_blank1 = req.body.question2_blank1;
+
     let question3_blank1 = req.body.question3_blank1;
+    let question3_blank2 = req.body.question3_blank2;
+    let question3_blank3 = req.body.question3_blank3;
+    let question3_blank4 = req.body.question3_blank4;
 
     let question4_blank1 = req.body.question4_blank1;
-    let question4_blank2 = req.body.question4_blank2;
-    let question4_blank3 = req.body.question4_blank3;
-    let question4_blank4 = req.body.question4_blank4;
-    let question4_blank5 = req.body.question4_blank5;
 
     let question5_blank1 = req.body.question5_blank1;
+    let question5_blank2 = req.body.question5_blank2;
+    let question5_blank3 = req.body.question5_blank3;
 
     let question6_blank1 = req.body.question6_blank1;
-    let question6_blank2 = req.body.question6_blank2;
-    let question6_blank3 = req.body.question6_blank3;
-    let question6_blank4 = req.body.question6_blank4;
-
     let question7_blank1 = req.body.question7_blank1;
     let question8_blank1 = req.body.question8_blank1;
     let question9_blank1 = req.body.question9_blank1;
@@ -109,19 +129,22 @@ UserRouter.route('/add_second_generation_survey_information').post(function (req
     let question14_blank1 = req.body.question14_blank1;
     let question15_blank1 = req.body.question15_blank1;
     let question16_blank1 = req.body.question16_blank1;
-    let question17_blank1 = req.body.question17_blank1;
+
+
+
     let link = req.body.link;
 
 
-    let obj = new SecondGeneration_Survey_Information(FullName,
+    let obj = new SecondGeneration_Survey_Information(
+        FullName,
         EmailAddress,
         Anonymous,
         question1_blank1,
         question2_blank1,
-        question3_blank1,
-        question4_blank1, question4_blank2, question4_blank3, question4_blank4, question4_blank5,
-        question5_blank1,
-        question6_blank1, question6_blank2, question6_blank3, question6_blank4,
+        question3_blank1, question3_blank2, question3_blank3, question3_blank4,
+        question4_blank1,
+        question5_blank1, question5_blank2, question5_blank3,
+        question6_blank1,
         question7_blank1,
         question8_blank1,
         question9_blank1,
@@ -131,8 +154,10 @@ UserRouter.route('/add_second_generation_survey_information').post(function (req
         question13_blank1,
         question14_blank1,
         question15_blank1,
-        question16_blank1,
-        question17_blank1,link);
+        question16_blank1
+
+
+        , link);
     obj.addRecord(res);
 
 });
@@ -140,8 +165,8 @@ UserRouter.route('/add_second_generation_survey_information').post(function (req
 
 
 UserRouter.route('/fetch_first_generation_documentid').post(function (req, res) {
-     let obj = new FirstGeneration_DocumentID();
-     obj.fetch_record(res);
+    let obj = new FirstGeneration_DocumentID();
+    obj.fetch_record(res);
 });
 
 UserRouter.route('/fetch_second_generation_documentid').post(function (req, res) {
